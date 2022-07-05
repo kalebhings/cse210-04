@@ -1,9 +1,6 @@
 namespace cse210_04.Game.Casting
 {
-    // TODO: Implement the Artifact class here
 
-    // 1) Add the class declaration. Use the following class comment. Make sure you
-    //    inherit from the Actor class.
         /// <summary>
         /// <para>An item of cultural or historical interest.</para>
         /// <para>
@@ -13,8 +10,8 @@ namespace cse210_04.Game.Casting
     public class Artifact : Actor
     {
 
-        private string message = "";
-    // 2) Create the class constructor. Use the following method comment.
+        private int score = 0;
+
         /// <summary>
         /// Constructs a new instance of Artifact.
         /// </summary>
@@ -23,27 +20,14 @@ namespace cse210_04.Game.Casting
 
         }
 
-    // 3) Create the GetMessage() method. Use the following method comment.
-        
-        /// <summary>
-        /// Gets the artifact's message.
-        /// </summary>
-        /// <returns>The message as a string.</returns>
-        public string GetMessage()
+        public int GetScore()
         {
-            return message;
+            return score;
         }
-        
 
-    // 4) Create the SetMessage(string message) method. Use the following method comment.
-        
-        /// <summary>
-        /// Sets the artifact's message to the given value.
-        /// </summary>
-        /// <param name="message">The given message.</param>
-        public void SetMessage(string message)
+        public void SetScore(int score)
         {
-            this.message = message;
+            this.score = score;
         }
     }
 }

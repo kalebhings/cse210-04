@@ -59,8 +59,7 @@ namespace cse210_04
             Random random = new Random();
             for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
             {
-                string text = ((char)random.Next(33, 126)).ToString();
-                string message = messages[i];
+                string text = ((char)(42)).ToString();
 
                 int x = random.Next(1, COLS);
                 int y = random.Next(1, ROWS);
@@ -77,8 +76,32 @@ namespace cse210_04
                 artifact.SetFontSize(FONT_SIZE);
                 artifact.SetColor(color);
                 artifact.SetPosition(position);
-                artifact.SetMessage(message);
+                artifact.SetScore(1);
                 cast.AddActor("artifacts", artifact);
+            }
+
+            for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
+            {
+                string text = ((char)(111)).ToString();
+
+                int x = random.Next(1, COLS);
+                int y = random.Next(1, ROWS);
+
+                Point position = new Point(x, y);
+                position = position.Scale(CELL_SIZE);
+
+                int r = random.Next(0, 256);
+                int g = random.Next(0, 256);
+                int b = random.Next(0, 256);
+                Color color = new Color(r, g, b);
+
+                Artifact artifact = new Artifact();
+                artifact.SetText(text);
+                artifact.SetFontSize(FONT_SIZE);
+                artifact.SetColor(color);
+                artifact.SetPosition(position);
+                artifact.SetScore(-1);
+                cast.AddActor("artifacts", artifact);   
             }
 
             // start the game
